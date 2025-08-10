@@ -23,11 +23,11 @@ https://www.kaggle.com/datasets/eliasdabbas/web-server-access-logs
 ## Amazon Athena Codes
 The Amazon Athena SQL script defines the steps to create and manage an external table for analyzing Apache access logs stored in an S3 bucket. Using a RegexSerDe, the script parses log fields such as IP address, request time, HTTP method, requested URL, status code, and user agent. Subsequent queries are designed to:
 
-· Validate parsed data.
-· Identify the most requested URLs
-· Summarize HTTP response code frequencies
-· Count requests by IP address.
-· Detect all HTTP 404 “Not Found” errors.
+-* Validate parsed data.
+-* Identify the most requested URLs
+-* Summarize HTTP response code frequencies
+-* Count requests by IP address.
+-* Detect all HTTP 404 “Not Found” errors.
 
 ## Big Data Controller Log
 The controller log records the orchestration of a Hadoop streaming job on AWS EMR. The job uses Python scripts (mapper.py and reducer.py) stored on S3 to process data from an S3 input location and output results back to S3. The environment configuration, EMR step ID, and command execution details are captured, confirming successful completion of the step within 294 seconds.
@@ -35,11 +35,11 @@ The controller log records the orchestration of a Hadoop streaming job on AWS EM
 ## Big Data Hadoop MapReduce System Log
 This system log provides a detailed account of the MapReduce job execution. It records connections to the YARN ResourceManager and Application History Server, file access from S3, and the job submission process. Progress is tracked for the map and reduce phases, culminating in successful job completion. Performance metrics are provided, including:
 
-- Map input records: 10,365,152
-- Reduce output records: 258,606
-- Total bytes read from S3: 3,502,850,345 bytes
-- Total bytes written to S3: 4,159,283 bytes
-- Memory and CPU usage statistics.
+-* Map input records: 10,365,152
+-* Reduce output records: 258,606
+-* Total bytes read from S3: 3,502,850,345 bytes
+-* Total bytes written to S3: 4,159,283 bytes
+-* Memory and CPU usage statistics.
 
 ## Query CSV and pictures
 The CSV result files contain the output of Athena queries, and the accompanying PNG files document the steps taken and resources used during query execution. These artifacts collectively represent both the input–output relationship and the execution plan for the analytical tasks.
@@ -47,13 +47,13 @@ The CSV result files contain the output of Athena queries, and the accompanying 
 ## Mapper and Reducer Python File
 This Python script serves as the Mapper in the MapReduce process. It reads each line from standard input, uses a regular expression to extract the client’s IP address from the log entry, and outputs it as a key-value pair in the format:
 
-<IP_Address>    1
+-* <IP_Address>    1
 
 This output indicates that the IP address was observed once in the processed log line. The tab-separated format is essential for Hadoop Streaming to correctly parse the mapper output for the reducer.
 
 This script functions as the Reducer. It reads the tab-separated key-value pairs produced by the mapper, aggregates the counts for each unique IP address, and outputs the final tally in the format:
 
-<IP_Address>    <Total_Count>
+-* <IP_Address>    <Total_Count>
 
 The reducer assumes that the input is sorted by IP address (as ensured by the Hadoop framework) and accumulates counts until a new IP address is encountered.
 
