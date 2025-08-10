@@ -29,10 +29,10 @@ The Amazon Athena SQL script defines the steps to create and manage an external 
 * Count requests by IP address.
 * Detect all HTTP 404 “Not Found” errors.
 
-## Big Data Controller Log
+## Controller Log
 The controller log records the orchestration of a Hadoop streaming job on AWS EMR. The job uses Python scripts (mapper.py and reducer.py) stored on S3 to process data from an S3 input location and output results back to S3. The environment configuration, EMR step ID, and command execution details are captured, confirming successful completion of the step within 294 seconds.
 
-## Big Data Hadoop MapReduce System Log
+## Hadoop MapReduce System Log
 This system log provides a detailed account of the MapReduce job execution. It records connections to the YARN ResourceManager and Application History Server, file access from S3, and the job submission process. Progress is tracked for the map and reduce phases, culminating in successful job completion. Performance metrics are provided, including:
 
 * Map input records: 10,365,152
