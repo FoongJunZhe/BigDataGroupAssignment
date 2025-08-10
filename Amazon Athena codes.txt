@@ -1,0 +1,52 @@
+-- 1. Switch to (or create) the appropriate database
+CREATE DATABASE IF NOT EXISTS my_logs_db;
+
+-- 2. Create table
+CREATE EXTERNAL TABLE IF NOT EXISTS access_logs (
+  ip_address STRING,
+  identity STRING,
+  user STRING,
+  request_time STRING,
+  request_method STRING,
+  request_url STRING,
+  request_protocol STRING,
+  response_code INT,
+  response_size INT,
+  referer STRING,
+  user_agent STRING,
+  other_field STRING
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.RegexSerDe'
+WITH SERDEPROPERTIES (
+  "input.regex" = "^(\\S+) (\\S+) (\\S+) \\[([^\\]]+)\\] \"(\\S+) ([^\"]+) (\\S+)\" (\\d{3}) (\\d+|-) \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\""
+)
+LOCATION 's3://your-existing-bucket/athena-input/'
+TBLPROPERTIES ('has_encrypted_data'='false');
+
+-- 3. Validate Parsing
+SELECT ip_address, request_time, request_url, response_code
+FROM access_logs;
+
+-- 4. Top 10 most requested URLs
+SELECT request_url, COUNT(*) AS hits
+FROM access_logs
+GROUP BY request_url
+ORDER BY hits DESC;
+
+-- 5. Count of HTTP response codes
+SELECT response_code, COUNT(*) AS count
+FROM access_logs
+GROUP BY response_code
+ORDER BY count DESC;
+
+-- 6. Count request per IP address
+SELECT ip_address, COUNT(*) AS request_count
+FROM access_logs
+GROUP BY ip_address
+ORDER BY request_count DESC;
+
+-- 7. Find all 404 Not Found Errors
+SELECT ip_address, request_time, request_url
+FROM access_logs
+WHERE response_code = 404
+ORDER BY request_time DESC;
