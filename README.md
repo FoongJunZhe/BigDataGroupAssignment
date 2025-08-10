@@ -20,23 +20,23 @@ https://www.kaggle.com/datasets/eliasdabbas/web-server-access-logs
 | Remote Logname / Authenticated User  | Placeholder fields in Apache logs; often unused and appear as hyphens “-“.                               | -                                                                                                                |
 
 
-# Amazon Athena Codes
+## Amazon Athena Codes
 Consists of the codes ran in Amazon Athena
 
-# Big Data Controller Log
+## Big Data Controller Log
 Controller log for MapReduce job
 
-# Big Data Hadoop MapReduce System Log
+## Big Data Hadoop MapReduce System Log
 System log for MapReduce job
 
-# Big Data Controller Log
+## Big Data Controller Log
 Controller log for MapReduce job
 
-# Query CSV and pictures
+## Query CSV and pictures
 Results for the query including the resources, time ran and query results
 
-# Mapper and Reducer Python File
+## Mapper and Reducer Python File
 Python script for the MapReduce job
 
-# MapReduce result file
+## MapReduce result file
 Consists of total ping request of each IP address within the dataset
