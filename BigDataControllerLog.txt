@@ -1,0 +1,47 @@
+2025-08-06T02:51:40.888738832Z INFO Ensure step 3 jar file command-runner.jar
+2025-08-06T02:51:40.889693504Z INFO StepRunner: Created Runner for step 3
+INFO startExec 'hadoop jar /var/lib/aws/emr/step-runner/hadoop-jars/command-runner.jar hadoop-streaming -files s3://bigdatafinalfjzsunway/script/mapper.py,s3://bigdatafinalfjzsunway/script/reducer.py -mapper mapper.py -reducer reducer.py -input s3://bigdatafinalfjzsunway/input -output s3://bigdatafinalfjzsunway/output'
+INFO Environment:
+  PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/opt/aws/puppet/bin/:/opt/puppetlabs/bin
+  INVOCATION_ID=9f1f24b3ff9b4e2f9880d67b7dbc3cfd
+  SECURITY_PROPERTIES=/emr/instance-controller/lib/security.properties
+  HISTCONTROL=ignoredups
+  MANPATH=:/opt/puppetlabs/puppet/share/man
+  PIDFILE=/emr/instance-controller/run/instance-controller.pid
+  HISTSIZE=1000
+  HADOOP_ROOT_LOGGER=INFO,DRFA
+  AWS_DEFAULT_REGION=us-east-1
+  JAVA_HOME=/etc/alternatives/jre
+  BASH_FUNC_which%%=() {  ( alias; eval ${which_declare} ) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot "$@"}
+  LANG=en_US.UTF-8
+  JOURNAL_STREAM=8:24011
+  MAIL=/var/spool/mail/hadoop
+  which_declare=declare -f
+  LOGNAME=hadoop
+  PWD=/
+  HADOOP_CLIENT_OPTS=-Djava.io.tmpdir=/mnt/var/lib/hadoop/steps/s-01455117VW8RQUUK6H7/tmp
+  _=/usr/lib/jvm/jre-17/bin/java
+  S_COLORS=auto
+  LESSOPEN=||/usr/bin/lesspipe.sh %s
+  SHELL=/bin/bash
+  USER=hadoop
+  GEM_HOME=/home/hadoop/.local/share/gem/ruby
+  HADOOP_LOGFILE=syslog
+  SYSTEMD_COLORS=false
+  HOSTNAME=ip-172-31-76-47.ec2.internal
+  HADOOP_LOG_DIR=/mnt/var/log/hadoop/steps/s-01455117VW8RQUUK6H7
+  SYSTEMD_EXEC_PID=3998
+  EMR_STEP_ID=s-01455117VW8RQUUK6H7
+  SHLVL=0
+  HOME=/home/hadoop
+  HADOOP_IDENT_STRING=hadoop
+INFO redirectOutput to /mnt/var/log/hadoop/steps/s-01455117VW8RQUUK6H7/stdout
+INFO redirectError to /mnt/var/log/hadoop/steps/s-01455117VW8RQUUK6H7/stderr
+INFO Working dir /mnt/var/lib/hadoop/steps/s-01455117VW8RQUUK6H7
+INFO ProcessRunner started child process 29044
+2025-08-06T02:51:40.891951503Z INFO HadoopJarStepRunner.Runner: startRun() called for s-01455117VW8RQUUK6H7 Child Pid: 29044
+INFO Synchronously wait child process to complete : hadoop jar /var/lib/aws/emr/step-runner/hadoop-...
+INFO waitProcessCompletion ended with exit code 0 : hadoop jar /var/lib/aws/emr/step-runner/hadoop-...
+INFO total process run time: 294 seconds
+2025-08-06T02:56:35.115418796Z INFO Step created jobs: job_1754447811819_0001
+2025-08-06T02:56:35.115909703Z INFO Step succeeded with exitCode 0 and took 294 seconds
