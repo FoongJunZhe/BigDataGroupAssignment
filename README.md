@@ -35,11 +35,11 @@ The controller log records the orchestration of a Hadoop streaming job on AWS EM
 ## Big Data Hadoop MapReduce System Log
 This system log provides a detailed account of the MapReduce job execution. It records connections to the YARN ResourceManager and Application History Server, file access from S3, and the job submission process. Progress is tracked for the map and reduce phases, culminating in successful job completion. Performance metrics are provided, including:
 
-Map input records: 10,365,152
-Reduce output records: 258,606
-Total bytes read from S3: 3,502,850,345 bytes
-Total bytes written to S3: 4,159,283 bytes
-Memory and CPU usage statistics.
+- Map input records: 10,365,152
+- Reduce output records: 258,606
+- Total bytes read from S3: 3,502,850,345 bytes
+- Total bytes written to S3: 4,159,283 bytes
+- Memory and CPU usage statistics.
 
 ## Query CSV and pictures
 The CSV result files contain the output of Athena queries, and the accompanying PNG files document the steps taken and resources used during query execution. These artifacts collectively represent both the input–output relationship and the execution plan for the analytical tasks.
