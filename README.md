@@ -23,11 +23,11 @@ https://www.kaggle.com/datasets/eliasdabbas/web-server-access-logs
 ## Amazon Athena Codes
 The Amazon Athena SQL script defines the steps to create and manage an external table for analyzing Apache access logs stored in an S3 bucket. Using a RegexSerDe, the script parses log fields such as IP address, request time, HTTP method, requested URL, status code, and user agent. Subsequent queries are designed to:
 
--- Validate parsed data.
--- Identify the most requested URLs
--- Summarize HTTP response code frequencies
--- Count requests by IP address.
--- Detect all HTTP 404 “Not Found” errors.
+· Validate parsed data.
+· Identify the most requested URLs
+· Summarize HTTP response code frequencies
+· Count requests by IP address.
+· Detect all HTTP 404 “Not Found” errors.
 
 ## Big Data Controller Log
 The controller log records the orchestration of a Hadoop streaming job on AWS EMR. The job uses Python scripts (mapper.py and reducer.py) stored on S3 to process data from an S3 input location and output results back to S3. The environment configuration, EMR step ID, and command execution details are captured, confirming successful completion of the step within 294 seconds.
