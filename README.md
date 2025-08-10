@@ -1,7 +1,20 @@
 # AWS Hadoop MapReduce and Non-MapReduce Comparative Analysis Research
-Big Data Group Assignment dataset and relevant files
+This research investigates and compares the performance, scalability, and operational efficiency of AWS Hadoop MapReduce and non-MapReduce-based big data processing approaches. The study focuses on analyzing their respective strengths, limitations, and suitability for various analytical workloads in cloud-based environments.
 
-Dataset source:
+The Hadoop MapReduce component of the research leverages AWS Elastic MapReduce (EMR) to process large datasets using the classic MapReduce paradigm, evaluating its fault tolerance, distributed data processing model, and cost-effectiveness when deployed at scale.
+
+The non-MapReduce approaches examined include alternative big data processing frameworks such as Apache Spark and Amazon Athena, which operate on different computational models, such as in-memory processing or serverless query execution. These methods are evaluated based on query execution time, resource utilization, ease of development, and flexibility in handling both structured and unstructured data.
+
+The research methodology involves executing equivalent analytical tasks on identical datasets across both environments and comparing performance metrics, including:
+
+* Data ingestion and preprocessing speed
+* Query execution time
+* Resource usage and scalability
+* Cost implications in AWS deployment
+
+The findings aim to provide data-driven recommendations for selecting the most appropriate processing approach depending on workload characteristics, budget constraints, and operational requirements in cloud-based big data analytics projects.
+
+## Dataset source:
 https://www.kaggle.com/datasets/eliasdabbas/web-server-access-logs
 
 ## Table 1. Dataset Descriptions
