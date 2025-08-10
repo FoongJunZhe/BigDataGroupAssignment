@@ -1,4 +1,4 @@
-# AWS Hadoop Streaming Comparative Analysis Resarch 
+# AWS Hadoop MapReduce and Non-MapReduce Comparative Analysis Research
 Big Data Group Assignment dataset and relevant files
 
 Dataset source:
