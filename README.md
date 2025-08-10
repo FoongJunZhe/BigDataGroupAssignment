@@ -1,4 +1,4 @@
-# BigDataGroupAssignment
+# AWS Hadoop Streaming Comparative Analysis Resarch 
 Big Data Group Assignment dataset and relevant files
 
 Dataset source:
