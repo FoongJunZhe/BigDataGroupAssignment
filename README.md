@@ -4,7 +4,7 @@ Big Data Group Assignment dataset and relevant files
 Dataset source:
 https://www.kaggle.com/datasets/eliasdabbas/web-server-access-logs
 
-# Table 1. Dataset Descriptions
+## Table 1. Dataset Descriptions
 
 | Field Name                          | Description                                                                                              | Example                                                                                                          |
 |--------------------------------------|----------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
